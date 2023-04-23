@@ -17,7 +17,7 @@
 # Main Dir
 CR_DIR=$(pwd)
 # Define toolchan path
-CR_TC=/home/runner/asarre/linaro-toolchain-latest/bin/aarch64-linux-gnu-
+CR_TC=/home/cod3x/Android/Kernels/ToolChains/los-4.9-64/bin/aarch64-linux-gnu-
 # Define proper arch and dir for dts files
 CR_DTS=arch/arm64/boot/dts
 CR_DTS_TREBLE=arch/arm64/boot/universal7870.dtsi
@@ -86,7 +86,7 @@ CR_CONFG_J600X=exynos7870-j6lte_defconfig
 CR_VARIANT_J600X=J600X
 # Device specific Variables [SM-A600X]
 CR_DTSFILES_A600X="exynos7870-a6lte_eur_open_00.dtb exynos7870-a6lte_eur_open_01.dtb exynos7870-a6lte_eur_open_02.dtb exynos7870-a6lte_eur_open_03.dtb"
-CR_CONFG_A600X=exynos7870-a6lte_defconfig
+CR_CONFG_A600X=nethunter_defconfig
 CR_VARIANT_A600X=A600X
 # Common configs
 CR_CONFIG_TREBLE=exynos7870-treble_defconfig
@@ -100,8 +100,8 @@ CR_HALLIC="0"
 # Flashable Variables
 FL_MODEL=NULL
 FL_VARIANT=NULL
-FL_DIR=$CR_DIR/PHANTOM/Flashable
-FL_EXPORT=$CR_DIR/PHANTOM/Flashable_OUT
+FL_DIR=$CR_DIR/ViP3R/Flashable
+FL_EXPORT=$CR_DIR/ViP3R/Flashable_OUT
 FL_SCRIPT=$FL_EXPORT/META-INF/com/google/android/updater-script
 #####################################################
 
@@ -302,7 +302,6 @@ BUILD_ZIMAGE()
 	echo "----------------------------------------------"
 	echo " "
 	echo "Building zImage for $CR_VARIANT"
-	export LOCALVERSION=-$CR_IMAGE_NAME
   cp $CR_DTB_MOUNT $CR_DTS/exynos7870.dtsi
 	echo "Make $CR_CONFIG"
 	make $CR_CONFIG
@@ -375,7 +374,7 @@ PACK_FLASHABLE()
 	echo " Target device : $CR_VARIANT "
   echo " Target image $CR_OUT/$CR_IMAGE_NAME.img "
   echo " Prepare Temporary Dirs"
-  FL_DEVICE=$FL_EXPORT/PHANTOM/device/$FL_MODEL/boot.img
+  FL_DEVICE=$FL_EXPORT/ViP3R/device/$FL_MODEL/boot.img
   echo " Copy $FL_DIR to $FL_EXPORT"
   rm -rf $FL_EXPORT
   mkdir $FL_EXPORT
