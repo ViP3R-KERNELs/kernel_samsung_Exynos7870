@@ -1,9 +1,9 @@
-#PHANTOM                    
+#ViP3R                   
 ui_print("*************************************");
-ui_print(" Kernel        : PHANTOM");
+ui_print(" Kernel        : ViP3R");
 ui_print(" Device        : universal7870");
 ui_print(" Manufacture   : samsung");
-ui_print(" Developer     : Asarre");
+ui_print(" Developer     : IamCOD3X");
 ui_print("*************************************");
 run_program("/sbin/mount", "-t", "auto", "/system");
 run_program("/sbin/mount", "-t", "auto", "/vendor");
@@ -11,38 +11,38 @@ run_program("/sbin/mount", "-t", "auto", "/data");
 ui_print("Target: Detecting phone model, please wait...");
 if is_substring("A320", getprop("ro.boot.bootloader")) then
     ui_print("Target: A3 2017 detected, extracting files...");
-    package_extract_file("PHANTOM/device/a3y17lte/boot.img", "/dev/block/platform/13540000.dwmmc0/by-name/BOOT");
+    package_extract_file("ViP3R/device/a3y17lte/boot.img", "/dev/block/platform/13540000.dwmmc0/by-name/BOOT");
 endif;
 if is_substring("J530", getprop("ro.boot.bootloader")) then
     ui_print("Target: J530 2017 detected, extracting files...");
-    package_extract_file("PHANTOM/device/j5y17lte/boot.img", "/dev/block/platform/13540000.dwmmc0/by-name/BOOT");
+    package_extract_file("ViP3R/device/j5y17lte/boot.img", "/dev/block/platform/13540000.dwmmc0/by-name/BOOT");
 endif;
 if is_substring("J730", getprop("ro.boot.bootloader")) then
     ui_print("Target: J7 2017 detected, extracting files...");
-    package_extract_file("PHANTOM/device/j7y17lte/boot.img", "/dev/block/platform/13540000.dwmmc0/by-name/BOOT");
+    package_extract_file("ViP3R/device/j7y17lte/boot.img", "/dev/block/platform/13540000.dwmmc0/by-name/BOOT");
 endif;
 if is_substring("G610", getprop("ro.boot.bootloader")) then
     ui_print("Target: J7 Prime detected, extracting files...");
-    package_extract_file("PHANTOM/device/on7xelte/boot.img", "/dev/block/platform/13540000.dwmmc0/by-name/BOOT");
+    package_extract_file("ViP3R/device/on7xelte/boot.img", "/dev/block/platform/13540000.dwmmc0/by-name/BOOT");
 endif;
 if is_substring("J710", getprop("ro.boot.bootloader")) then
     ui_print("Target: J7 2016 detected, extracting files...");
-    package_extract_file("PHANTOM/device/j7xelte/boot.img", "/dev/block/platform/13540000.dwmmc0/by-name/BOOT");
+    package_extract_file("ViP3R/device/j7xelte/boot.img", "/dev/block/platform/13540000.dwmmc0/by-name/BOOT");
 endif;
 if is_substring("J701", getprop("ro.boot.bootloader")) then
     ui_print("Target: J7 NXT detected, extracting files...");
-    package_extract_file("PHANTOM/device/j7velte/boot.img", "/dev/block/platform/13540000.dwmmc0/by-name/BOOT");
+    package_extract_file("ViP3R/device/j7velte/boot.img", "/dev/block/platform/13540000.dwmmc0/by-name/BOOT");
 endif;
 if is_substring("J600", getprop("ro.boot.bootloader")) then
     ui_print("Target: J6 2018 detected, extracting files...");
-    package_extract_file("PHANTOM/device/j6lte/boot.img", "/dev/block/platform/13540000.dwmmc0/by-name/BOOT");
+    package_extract_file("ViP3R/device/j6lte/boot.img", "/dev/block/platform/13540000.dwmmc0/by-name/BOOT");
 endif;
 if is_substring("A600", getprop("ro.boot.bootloader")) then
     ui_print("Target: A6 2018 detected, extracting files...");
-    package_extract_file("PHANTOM/device/a6lte/boot.img", "/dev/block/platform/13540000.dwmmc0/by-name/BOOT");
+    package_extract_file("ViP3R/device/a6lte/boot.img", "/dev/block/platform/13540000.dwmmc0/by-name/BOOT");
 endif;
-package_extract_dir("PHANTOM/system", "/system");
-package_extract_dir("PHANTOM/vendor", "/vendor");	
+package_extract_dir("ViP3R/system", "/system");
+package_extract_dir("ViP3R/vendor", "/vendor");	
 set_progress(1.0);
 ui_print("- Huge thanks to @OGspartanicus @astrako @ananjaser1211 for their contributions to 7870");
 ifelse(is_mounted("/system"), unmount("/system"));

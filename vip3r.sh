@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# PhantomKernel script
+# ViP3RKernel script
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -23,19 +23,19 @@ CR_DTS=arch/arm64/boot/dts
 CR_DTS_TREBLE=arch/arm64/boot/universal7870.dtsi
 CR_DTS_X6LTE=arch/arm64/boot/exynos7870_x6lte.dtsi
 # Define boot.img out dir
-CR_OUT=$CR_DIR/PHANTOM/Out
-CR_PRODUCT=$CR_DIR/PHANTOM/Product
+CR_OUT=$CR_DIR/ViP3R/Out
+CR_PRODUCT=$CR_DIR/ViP3R/Product
 # Presistant A.I.K Location
-CR_AIK=$CR_DIR/PHANTOM/A.I.K
+CR_AIK=$CR_DIR/ViP3R/A.I.K
 # Main Ramdisk Location
-CR_RAMDISK=$CR_DIR/PHANTOM/universal7870
+CR_RAMDISK=$CR_DIR/ViP3R/universal7870
 # Compiled image name and location (Image/zImage)
 CR_KERNEL=$CR_DIR/arch/arm64/boot/Image
 # Compiled dtb by dtbtool
 CR_DTB=$CR_DIR/boot.img-dtb
 # Kernel Name and Version
 CR_VERSION=V1.0
-CR_NAME=PhantomKernel
+CR_NAME=ViP3R-Kernel
 # Thread count
 CR_JOBS=$(nproc --all)
 # Target android version and platform (7/n/8/o/9/p)
@@ -92,7 +92,7 @@ CR_VARIANT_A600X=A600X
 CR_CONFIG_TREBLE=exynos7870-treble_defconfig
 CR_CONFIG_ONEUI=exynos7870-oneui_defconfig
 CR_CONFIG_SPLIT=NULL
-CR_CONFIG_PHANTOM=exynos7870-phantom_defconfig
+CR_CONFIG_ViP3R=exynos7870-phantom_defconfig
 # Prefixes
 CR_ROOT="0"
 CR_PERMISSIVE="0"
@@ -277,8 +277,8 @@ BUILD_GENERATE_CONFIG()
     echo " Copy $CR_CONFIG_USB "
     cat $CR_DIR/arch/$CR_ARCH/configs/$CR_CONFIG_USB >> $CR_DIR/arch/$CR_ARCH/configs/tmp_defconfig
   fi
-  echo " Copy $CR_CONFIG_PHANTOM "
-  cat $CR_DIR/arch/$CR_ARCH/configs/$CR_CONFIG_PHANTOM >> $CR_DIR/arch/$CR_ARCH/configs/tmp_defconfig
+  echo " Copy $CR_CONFIG_ViP3R "
+  cat $CR_DIR/arch/$CR_ARCH/configs/$CR_CONFIG_ViP3R >> $CR_DIR/arch/$CR_ARCH/configs/tmp_defconfig
   echo " Set $CR_VARIANT to generated config "
   CR_CONFIG=tmp_defconfig
 }
